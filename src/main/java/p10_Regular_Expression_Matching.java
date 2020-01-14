@@ -1,6 +1,7 @@
 import java.util.regex.Pattern;
 
 public class p10_Regular_Expression_Matching {
+    //use the Pattern and Matcher
     public boolean sol_1(String s, String p) {
         Pattern pattern = Pattern.compile("^"+p+"$");
         return pattern.matcher(s).matches();

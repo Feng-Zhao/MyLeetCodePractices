@@ -1,4 +1,5 @@
 public class p9_Palindrome_Number {
+    //find the center and check the dual direction.
     public boolean sol_1(int x) {
         if (x < 0 ){
             return false;
@@ -12,6 +13,7 @@ public class p9_Palindrome_Number {
         return true;
     }
 
+    //revers the int and check whether they are the same
     public boolean sol_2(int x){
         if(x >= 0 && x < 9) return true;
         if(x < 0 || x%10 == 0 ) return false;

@@ -1,6 +1,7 @@
 import java.util.regex.Pattern;
 
 public class p11_Container_With_Most_Water {
+    //Brute Force O(n^2)
     public int sol_1(int[] height) {
         int max = 0;
         for(int i = 0; i < height.length; i++){
@@ -10,6 +11,10 @@ public class p11_Container_With_Most_Water {
         }
         return max;
     }
+
+    //from two side to the center,
+    //each time, we reserve the higher wall
+    //and compare the maxarea with the new area
     public int sol_2(int[] height) {
         int maxArea = Integer.MIN_VALUE;
         int i = 0;

@@ -1,4 +1,3 @@
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,15 +18,21 @@ public class p18_4Sum {
     public void kSum(int depth, int target, List<List<Integer>> result,
                      List<Integer> curPath,
                      int[]nums, int start, int end){
-        if(depth == 0 && target == 0){
-            result.add(curPath);
-            return;
+        if (depth == 2) {                        // 2 Sum
+            while (start < end-1) {
+                if      (nums[start] + nums[end-1] < target) start++;
+                else if (nums[start] + nums[end-1] > target) end--;
+                else {
+                    result.add(new ArrayList<>(curPath));
+                    result.get(result.size() - 1).addAll(Arrays.asList(nums[start], nums[end-1]));
+                    start++; end--;
+                    while (start < end && nums[start] == nums[start - 1]) start++;
+                    while (start < end && nums[end] == nums[end + 1]) end--;
+                }
+            }
         }
-        else if(depth == 0 && target != 0){
-            return;
-        }
-        else if(depth != 0){
-            for (int i = start; i < end; i++) {
+        else if(depth > 2){
+            for (int i = start; i < end - depth + 1; i++) {
                 List<Integer> temp = new ArrayList<>(curPath);
                 temp.add(nums[i]);
                 if(i > 0 && nums[i-1] == nums[i]){}
@@ -40,8 +45,8 @@ public class p18_4Sum {
     }
     static public void main(String[] arg){
         p18_4Sum sol = new p18_4Sum();
-        int[] test_n = {-1,2,1,-4,0,4,2};
-        int test_t = 2;
+        int[] test_n = {-1,0,-1,0,-2,2};
+        int test_t = 0;
         List<List<Integer>> re = sol.sol_1(test_n, test_t);
         System.out.println(re.toString());
     }

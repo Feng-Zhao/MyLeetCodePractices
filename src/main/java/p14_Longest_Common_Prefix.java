@@ -1,4 +1,5 @@
 public class p14_Longest_Common_Prefix {
+    //scan in the vertical direction
     public String sol_1(String[] strs) {
         if(strs.length < 1){
             return "";

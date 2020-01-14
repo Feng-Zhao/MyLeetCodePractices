@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class p16_3Sum_Closest {
+    //Brute Force
     public int sol_1(int[] nums, int target) {
         int min = Integer.MAX_VALUE;
         int result = 0;
@@ -19,6 +20,8 @@ public class p16_3Sum_Closest {
         }
         return result;
     }
+
+    //sort then search
     public int sol_2(int[] nums, int target) {
         if(nums.length == 3){
             return nums[0] + nums[1] + nums[2];
