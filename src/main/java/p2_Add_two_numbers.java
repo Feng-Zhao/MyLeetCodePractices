@@ -1,7 +1,9 @@
 public class p2_Add_two_numbers {
-    public ListNode sol_1(ListNode l1, ListNode l2) {
-        ListNode res_head = new ListNode(0);
-        ListNode res_tile = res_head;
+
+    //use a flag carry to mark whether the last compute is overflow
+    public MyListNode sol_1(MyListNode l1, MyListNode l2) {
+        MyListNode res_head = new MyListNode(0);
+        MyListNode res_tile = res_head;
         int carry = 0;
 
         while (l1 != null || l2 != null || carry != 0) {
@@ -17,7 +19,7 @@ public class p2_Add_two_numbers {
             } else {
                 carry = 0;
             }
-            res_tile.next = new ListNode(c);
+            res_tile.next = new MyListNode(c);
             res_tile = res_tile.next;
             l1 = l1 == null ? null : l1.next;
             l2 = l2 == null ? null : l2.next;
@@ -26,37 +28,36 @@ public class p2_Add_two_numbers {
     }
 
     static public void main(String[] arg) {
-        ListNode l1 = new ListNode(0);
-        ListNode l2 = new ListNode(5);
-        ListNode l1_tile = l1;
-        ListNode l2_tile = l2;
+        MyListNode l1 = new MyListNode(0);
+        MyListNode l2 = new MyListNode(5);
+        MyListNode l1_tile = l1;
+        MyListNode l2_tile = l2;
 
-        l1_tile.next = new ListNode(4);
+        l1_tile.next = new MyListNode(4);
         l1_tile = l1_tile.next;
-        l1_tile.next = new ListNode(3);
+        l1_tile.next = new MyListNode(3);
 
-        l2_tile.next = new ListNode(6);
+        l2_tile.next = new MyListNode(6);
         l2_tile = l2_tile.next;
-        l2_tile.next = new ListNode(4);
+        l2_tile.next = new MyListNode(4);
         l2_tile = l2_tile.next;
-        l2_tile.next = new ListNode(4);
+        l2_tile.next = new MyListNode(4);
 
         p2_Add_two_numbers solution = new p2_Add_two_numbers();
-        ListNode res = solution.sol_1(l1, l2);
+        MyListNode res = solution.sol_1(l1, l2);
         while (res != null) {
             System.out.print(res.val);
             System.out.print("->");
             res = res.next;
         }
     }
-
 }
 
-class ListNode {
+class MyListNode {
     int val;
-    ListNode next;
+    MyListNode next;
 
-    ListNode(int x) {
+    MyListNode(int x) {
         val = x;
     }
 }

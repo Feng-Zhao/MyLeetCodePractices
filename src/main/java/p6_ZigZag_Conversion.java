@@ -4,6 +4,8 @@ import org.slf4j.LoggerFactory;
 public class p6_ZigZag_Conversion {
     final Logger logger = LoggerFactory.getLogger(p665_non_decreasing_array.class);
 
+    //use a flag upforword? to mark whether the nextRow is cur+1 or cur-1
+    //when cur hit 0 or row-1, revers the direction.
     public String sol_1(String s, int numRows) {
         if(numRows < 2){
             return s;

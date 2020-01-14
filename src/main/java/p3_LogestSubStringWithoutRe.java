@@ -35,6 +35,11 @@ public class p3_LogestSubStringWithoutRe {
         return false;
     }
 
+    //scan the string when we meet the repeat char,
+    //cut the string into two parts
+    //(start,pos),(pos+1,end)
+    //return max(left_s.len, cutoff(right_s))
+    //this is a divide and conquer algorithm with recursive
     public int Sol_2_cutoff(String s) {
         if(s.length()<=1){
             return s.length();
@@ -98,16 +103,17 @@ public class p3_LogestSubStringWithoutRe {
 //        System.out.println("Sol_1_BroutForece: " + result);
         System.out.println("Sol_2_cutoff: " + result2);
     }
+
+    class TwoTuple<A, B> {
+        public final Integer first;
+        public final Integer second;
+        public TwoTuple(Integer a, Integer b) {
+            first = a;
+            second = b;
+        }
+        public String toString() {
+            return "("+ first + "," + second + ")";
+        }
+    }
 }
 
-class TwoTuple<A, B> {
-    public final Integer first;
-    public final Integer second;
-    public TwoTuple(Integer a, Integer b) {
-        first = a;
-        second = b;
-    }
-    public String toString() {
-        return "("+ first + "," + second + ")";
-    }
-}

@@ -1,6 +1,9 @@
 import java.util.HashMap;
 
 public class p1_TwoSum {
+    //brute force
+    //just try all combinations
+    //O(n^2)
     public int[] sol_1(int[] nums, int target) {
         int x;
         int y;
@@ -14,6 +17,9 @@ public class p1_TwoSum {
         return null;
     }
 
+    //use Map to store the first num
+    //and use map.containsKey() method to check whether there are
+    //num: b which b = target - a;
     public int[] sol_2(int[] nums, int target) {
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int x = 0; x < nums.length; x++){

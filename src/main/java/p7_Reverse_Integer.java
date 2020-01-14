@@ -6,9 +6,11 @@ public class p7_Reverse_Integer {
     public int sol_1(int x) {
         int rev = reverseNumb(x);
         int revRev = reverseNumb(rev);
+        //important to check that whether the duel revers is equal
+        //that's point out whether there is overflow happens
         return (x == revRev || x % 10 == 0) ? rev : 0;
     }
-
+    //reverse number
     public int reverseNumb(int x) {
         int y = 0;
         while(x != 0) {
@@ -28,6 +30,10 @@ public class p7_Reverse_Integer {
             else
                 givenLength = String.valueOf(x).length()-2;
             int mod = x%10;
+            //when an overflow double value is given to a int various,
+            //the int would be Integer.MAX_VALUE or Integer.MIN_VALUE
+            //however when tow int various overflow, it overflows, and be
+            // treat as normal int(the).
             reverseX += (mod * Math.pow(10,givenLength));
 
             if(reverseX==Integer.MIN_VALUE || reverseX==Integer.MAX_VALUE){

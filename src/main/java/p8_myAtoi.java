@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 public class p8_myAtoi {
     final Logger logger = LoggerFactory.getLogger(p8_myAtoi.class);
 
+    //use pattern to extract the digital part
     public int sol_1(String str) {
         Pattern p = Pattern.compile("^(\\s*)(\\+)?(-)?(\\d+)(.*)$");
 //        logger.debug(p.pattern());
@@ -33,6 +34,7 @@ public class p8_myAtoi {
         return 0;
     }
 
+    //normal Atoi without pattern
     public int sol_2(String str){
         double leftLimit = -2147483648, rightLimit = 2147483647, nmbToInt = 0;
         boolean sign = false; // false -> there is a "+"
