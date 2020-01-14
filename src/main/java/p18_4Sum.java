@@ -11,35 +11,48 @@ public class p18_4Sum {
         Arrays.sort(nums);
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> cur = new ArrayList<>();
-        kSum(4,target,res,cur,nums,0,nums.length);
+        kSum(4,target,res,cur,nums,0);
         return res;
     }
 
     public void kSum(int depth, int target, List<List<Integer>> result,
                      List<Integer> curPath,
-                     int[]nums, int start, int end){
+                     int[]nums, int start){
+        int max = nums[nums.length - 1];
+        if (nums[start] * depth > target || max * depth < target) return;
         if (depth == 2) {                        // 2 Sum
-            while (start < end-1) {
-                if      (nums[start] + nums[end-1] < target) start++;
-                else if (nums[start] + nums[end-1] > target) end--;
+            int left = start;
+            int right = nums.length - 1;
+            while (left < right) {
+                if      (nums[left] + nums[right] < target) left++;
+                else if (nums[left] + nums[right] > target) right--;
                 else {
                     result.add(new ArrayList<>(curPath));
-                    result.get(result.size() - 1).addAll(Arrays.asList(nums[start], nums[end-1]));
-                    start++; end--;
-                    while (start < end && nums[start] == nums[start - 1]) start++;
-                    while (start < end && nums[end] == nums[end + 1]) end--;
+                    result.get(result.size() - 1).addAll(Arrays.asList(nums[left], nums[right]));
+                    left++; right--;
+                    while (left < right && nums[left] == nums[left - 1]) left++;
+                    while (left < right && nums[right] == nums[right + 1]) right--;
                 }
             }
         }
-        else if(depth > 2){
-            for (int i = start; i < end - depth + 1; i++) {
-                List<Integer> temp = new ArrayList<>(curPath);
-                temp.add(nums[i]);
-                if(i > 0 && nums[i-1] == nums[i]){}
-                else {
-                    kSum(depth - 1, target - nums[i], result, temp, nums,
-                            i + 1, end);
+        else{
+            for (int i = start; i < nums.length - depth + 1; i++) {
+                if (i > start && nums[i] == nums[i - 1]) continue;
+                if (nums[i] + max * (depth - 1) < target) continue;
+                if (nums[i] * depth > target) break;
+                if (nums[i] * depth == target) {
+                    if (nums[i + depth - 1] == nums[i]) {
+                        result.add(new ArrayList<>(curPath));
+                        List<Integer> temp = new ArrayList<>();
+                        for (int x = 0; x < depth; x++) temp.add(nums[i]);
+                        result.get(result.size() - 1).addAll(temp);    // Add result immediately.
+                    }
+                    break;
                 }
+                curPath.add(nums[i]);
+                kSum(depth - 1, target - nums[i], result, curPath, nums,
+                            i + 1);
+                curPath.remove(curPath.size()-1);
             }
         }
     }
