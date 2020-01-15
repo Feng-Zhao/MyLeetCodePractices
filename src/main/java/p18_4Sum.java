@@ -20,9 +20,11 @@ public class p18_4Sum {
                      int[]nums, int start){
         int max = nums[nums.length - 1];
         if (nums[start] * depth > target || max * depth < target) return;
+        //the minimum size of this problem
         if (depth == 2) {                        // 2 Sum
             int left = start;
             int right = nums.length - 1;
+            //search answers
             while (left < right) {
                 if      (nums[left] + nums[right] < target) left++;
                 else if (nums[left] + nums[right] > target) right--;
@@ -30,13 +32,16 @@ public class p18_4Sum {
                     result.add(new ArrayList<>(curPath));
                     result.get(result.size() - 1).addAll(Arrays.asList(nums[left], nums[right]));
                     left++; right--;
+                    //remove the repeat combinations
                     while (left < right && nums[left] == nums[left - 1]) left++;
                     while (left < right && nums[right] == nums[right + 1]) right--;
                 }
             }
         }
         else{
+            //backtracking
             for (int i = start; i < nums.length - depth + 1; i++) {
+                //break if once we found this path does not contain an answer.
                 if (i > start && nums[i] == nums[i - 1]) continue;
                 if (nums[i] + max * (depth - 1) < target) continue;
                 if (nums[i] * depth > target) break;
@@ -52,6 +57,7 @@ public class p18_4Sum {
                 curPath.add(nums[i]);
                 kSum(depth - 1, target - nums[i], result, curPath, nums,
                             i + 1);
+                //back to the last state
                 curPath.remove(curPath.size()-1);
             }
         }
