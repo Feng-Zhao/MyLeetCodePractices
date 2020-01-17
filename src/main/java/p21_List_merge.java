@@ -36,10 +36,5 @@ public class p21_List_merge {
             return l2;
         }
     }
-
-    public class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
 }
+

@@ -1,8 +1,4 @@
 
-//Definition for singly-linked list.
-
-
-
 public class p19_Del_n_from_LinkedList {
     public ListNode sol_1(ListNode head, int n) {
         ListNode first = head;
@@ -23,11 +19,5 @@ public class p19_Del_n_from_LinkedList {
         else{
             return head.next;
         }
-    }
-
-    public class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
     }
 }
