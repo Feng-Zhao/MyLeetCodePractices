@@ -1,9 +1,10 @@
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class p23_k_sorted_list_merge {
-    public ListNode mergeKLists(ListNode[] lists) {
+    public ListNode sol_1(ListNode[] lists) {
         if(lists.length == 0){
             return null;
         }
@@ -31,36 +32,22 @@ public class p23_k_sorted_list_merge {
 
 
     //use priorityQueue
-    //comes from https://leetcode.com/problems/merge-k-sorted-lists/discuss/10528/A-java-solution-based-on-Priority-Queue
-    public ListNode mergeKLists(List<ListNode> lists) {
-        if (lists==null||lists.size()==0) return null;
+    //comes from https://leetcode.com/problems/merge-k-sorted-lists/discuss/10809/13-lines-in-Java
+    public ListNode sol_2(ListNode[] lists) {
+//        if (lists==null||lists.length ==0) return null;
 
-        PriorityQueue<ListNode> queue= new PriorityQueue<ListNode>(lists.size(),new Comparator<ListNode>(){
-            @Override
-            public int compare(ListNode o1,ListNode o2){
-                if (o1.val<o2.val)
-                    return -1;
-                else if (o1.val==o2.val)
-                    return 0;
-                else
-                    return 1;
+        Queue<ListNode> heap = new PriorityQueue(new Comparator<ListNode>(){
+            @Override public int compare(ListNode l1, ListNode l2) {
+                return l1.val - l2.val;
             }
         });
-
-        ListNode dummy = new ListNode(0);
-        ListNode tail=dummy;
-
-        for (ListNode node:lists)
-            if (node!=null)
-                queue.add(node);
-
-        while (!queue.isEmpty()){
-            tail.next=queue.poll();
-            tail=tail.next;
-
-            if (tail.next!=null)
-                queue.add(tail.next);
+        ListNode head = new ListNode(0), tail = head;
+        for (ListNode node : lists) if (node != null) heap.offer(node);
+        while (!heap.isEmpty()) {
+            tail.next = heap.poll();
+            tail = tail.next;
+            if (tail.next != null) heap.offer(tail.next);
         }
-        return dummy.next;
+        return head.next;
     }
 }
