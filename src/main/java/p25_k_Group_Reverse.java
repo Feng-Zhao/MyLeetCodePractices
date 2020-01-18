@@ -21,6 +21,9 @@ public class p25_k_Group_Reverse {
     }
 
     public ListNode reverseKGroup(ListNode head, int k, int needToReverse){
+        if(head == null){
+            return head;
+        }
         if(needToReverse == 2){
             return swapPairs(head);
         }
@@ -66,10 +69,10 @@ public class p25_k_Group_Reverse {
         a = a.next;
         a.next = new ListNode(3);
         a = a.next;
-        a.next = new ListNode(4);
-        a=a.next;
-        a.next = new ListNode(5);
-        a = a.next;
+//        a.next = new ListNode(4);
+//        a=a.next;
+//        a.next = new ListNode(5);
+//        a = a.next;
         a.next = null;
         int k = 3;
 
