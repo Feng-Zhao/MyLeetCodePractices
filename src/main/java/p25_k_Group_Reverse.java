@@ -1,5 +1,3 @@
-import java.lang.management.OperatingSystemMXBean;
-import java.util.Queue;
 
 public class p25_k_Group_Reverse {
     //scan twice

@@ -1,14 +1,12 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class p4_Median_of_Two_Sorted_Arrays {
 
     // merge sorted
     // T = O(m+n), S = O(m+n)
     public double sol_1(int[] nums1, int[] nums2) {
-        List<Integer> all = new ArrayList();
+        List<Integer> all = new ArrayList<>();
 
         int p1 = 0;
         int p2 = 0;

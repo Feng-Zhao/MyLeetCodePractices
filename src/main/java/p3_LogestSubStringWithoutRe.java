@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class p3_LogestSubStringWithoutRe {
@@ -46,7 +44,7 @@ public class p3_LogestSubStringWithoutRe {
         }
         else {
             String right_s;
-            Map<Character, Integer> checkMap = new HashMap();
+            Map<Character, Integer> checkMap = new HashMap<>();
             for (int pos = 0; pos < s.length(); pos++) {
                 char now = s.charAt(pos);
                 if (checkMap.containsKey(now)) {
@@ -97,7 +95,7 @@ public class p3_LogestSubStringWithoutRe {
 
     static public void main(String arg[]){
         p3_LogestSubStringWithoutRe sol = new p3_LogestSubStringWithoutRe();
-        String test = "aaaa";
+        String test = "abbbasdaaa";
 //        int result = sol.Sol_1_BroutForece(test);
         int result2 = sol.Sol_2_cutoff(test);
 //        System.out.println("Sol_1_BroutForece: " + result);
