@@ -1,4 +1,3 @@
-import java.sql.Statement;
 import java.util.*;
 
 public class p20_Parentheses_Validation {

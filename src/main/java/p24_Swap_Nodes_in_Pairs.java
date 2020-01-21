@@ -1,5 +1,4 @@
-import java.awt.image.TileObserver;
-import java.util.List;
+
 
 public class p24_Swap_Nodes_in_Pairs {
     public ListNode sol_1(ListNode head) {

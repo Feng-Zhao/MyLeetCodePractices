@@ -1,10 +1,5 @@
 package TopInteviewEasy.ArrayQuestions;
 
-import java.lang.invoke.MutableCallSite;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class RemoveDuplicates {
     public int sol_1(int[] nums) {
         if(nums.length < 2){

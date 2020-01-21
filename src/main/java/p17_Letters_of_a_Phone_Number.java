@@ -1,12 +1,8 @@
-import com.sun.tools.javac.tree.DCTree;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import javax.lang.model.element.NestingKind;
 import java.util.*;
 
 public class p17_Letters_of_a_Phone_Number {
-    final Logger logger = LoggerFactory.getLogger(p17_Letters_of_a_Phone_Number.class);
+    // final Logger logger = LoggerFactory.getLogger(p17_Letters_of_a_Phone_Number.class);
     public List<String> sol_1(String digits) {
         if(digits.length() < 1){
             return new ArrayList<>();

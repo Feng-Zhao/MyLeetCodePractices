@@ -1,6 +1,4 @@
-import java.awt.font.NumericShaper;
 import java.util.Arrays;
-import java.util.List;
 
 public class p16_3Sum_Closest {
     //Brute Force

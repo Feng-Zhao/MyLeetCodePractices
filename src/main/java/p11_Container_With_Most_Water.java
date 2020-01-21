@@ -1,4 +1,3 @@
-import java.util.regex.Pattern;
 
 public class p11_Container_With_Most_Water {
     //Brute Force O(n^2)
