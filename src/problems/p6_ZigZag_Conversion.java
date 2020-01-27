@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class p6_ZigZag_Conversion {
-    final Logger logger = LoggerFactory.getLogger(p665_non_decreasing_array.class);
+    final Logger logger = LoggerFactory.getLogger(p6_ZigZag_Conversion.class);
 
     //use a flag upforword? to mark whether the nextRow is cur+1 or cur-1
     //when cur hit 0 or row-1, revers the direction.

@@ -20,7 +20,7 @@
         </plugins> 
         <sourceDirectory>./src</sourceDirectory>
         <scriptSourceDirectory>./src/scripts</scriptSourceDirectory>
-        <testSourceDirectory>./src.test./ava</testSourceDirectory>
+        <testSourceDirectory>./src/test/java</testSourceDirectory>
         <outputDirectory>./target/classes</outputDirectory>
         <testOutputDirectory>./target/test-classes</testOutputDirectory>
         <resources>

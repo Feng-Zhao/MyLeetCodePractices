@@ -1,9 +1,7 @@
 package TopInteviewEasy.ArrayQuestions;
 
-import java.util.Arrays;
-import java.util.Map;
 
-public class stockBS {
+public class T2_stockBS {
     public int maxProfit(int[] prices) {
         if(prices.length < 1){
             return 0;
