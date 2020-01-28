@@ -20,7 +20,12 @@ public class T3_Rotate_Array {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            nums[i] = deque.poll();
+            if(!deque.isEmpty()){
+                nums[i] = deque.poll();
+            }
+            else{
+                return;
+            }
         }
         // for (int i = 0; i < nums.length; i++) {
         //     System.out.println(nums[i]);
