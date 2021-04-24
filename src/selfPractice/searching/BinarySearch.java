@@ -1,6 +1,5 @@
 package  selfPractice.searching;
 
-import sun.jvm.hotspot.oops.DataLayout;
 
 class BinarySearch {
 //    public static binarySearch instance;
@@ -18,7 +17,7 @@ class BinarySearch {
         }
         else{
             int left = 0;
-            int right = data.length;
+            int right = data.length - 1;
             int mid = left + (right - left)/2;
 
             while(left <= right){
@@ -26,10 +25,10 @@ class BinarySearch {
                     return mid;
                 }
                 else if(data[mid] > target){
-                    right = mid;
+                    right = mid + 1;
                 }
                 else if(data[mid] < target){
-                    left = mid;
+                    left = mid - 1;
                 }
                 mid = left + (right - left)/2;
             }
