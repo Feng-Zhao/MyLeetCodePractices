@@ -10,7 +10,7 @@ class p992_Subarrays_with_K_Different_Integer {
         for(int pos = 0; pos < A.length; pos++){
             for(int end = pos + K; end < A.length; end++){
                 int[] forCheck = Arrays.copyOfRange(A, pos, end);
-                Set<Integer> forCheck
+                // Set<Integer> forCheck
             }
                 
         }

@@ -9,15 +9,12 @@ public class BiTreeNode {
         this.left = null;
         this.right = null;
     }
-    public BiTreeNode(){
-        this.left = null;
-        this.right = null;
+    public BiTreeNode(){}
+    public void setLeft(BiTreeNode l_child){
+        this.left = l_child;
     }
-    public void setLeft(BiTreeNode l){
-        this.left = l;
-    }
-    public void setRight(BiTreeNode r){
-        this.right = r;
+    public void setRight(BiTreeNode r_child){
+        this.right = r_child;
     }
     public void addNode(int n){
         if(n <= this.data){

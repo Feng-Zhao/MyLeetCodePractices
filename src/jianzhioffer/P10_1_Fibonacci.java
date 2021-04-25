@@ -1,7 +1,7 @@
 package jianzhioffer;
 
 public class P10_1_Fibonacci {
-    // the anwser need mod 1e9+7（1000000007）to avoid overflow
+    // the anwser need mod 1e9+7(1000000007）to avoid overflow
 
     // recursive O(n!)
     public int fib(int n) {

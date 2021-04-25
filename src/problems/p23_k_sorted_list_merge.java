@@ -39,7 +39,7 @@ public class p23_k_sorted_list_merge {
     public ListNode sol_2(ListNode[] lists) {
 //        if (lists==null||lists.length ==0) return null;
 
-        Queue<ListNode> heap = new PriorityQueue(new Comparator<ListNode>() {
+        Queue<ListNode> heap = new PriorityQueue<>(new Comparator<ListNode>() {
             @Override
             public int compare(ListNode l1, ListNode l2) {
                 return l1.val - l2.val;
