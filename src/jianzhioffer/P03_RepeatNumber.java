@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class P03_RepeatNumber{
     // constrain nums[n] = [0,n-1],   n = [2,10000]
+    //暴力解法
     public static int findRepeatNumber(int[] nums) {
         int temp;
         for (int i = 0; i < nums.length; i++){
@@ -21,6 +22,7 @@ public class P03_RepeatNumber{
         return -1;
     }
 
+    // 利用HashMap查找
     public static int findRepeatNumber2(int[] nums) {
         Set<Integer> dic = new HashSet<>();
         for(int num : nums) {
@@ -30,6 +32,7 @@ public class P03_RepeatNumber{
         return -1;
     }
 
+    // 利用数组sort方法
     public static int findRepeatNumber3(int[] nums){
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 1; i++) {
