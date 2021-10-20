@@ -1,3 +1,4 @@
+package jianzhioffer;
 
 
 public class P14_1_RopeCut{
@@ -16,6 +17,6 @@ public class P14_1_RopeCut{
         // 10 -> 3,3,2,2
 
         // method： d(1) = 1; d(2) = 2; d(3) = 3; d(4) = 4;
-
+        return 0;
     }
 }
